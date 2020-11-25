@@ -66,6 +66,10 @@ public class Airport {
                 .collect(Collectors.toList());
     }
 
+    public List<? extends Plane> getAllPlanes() {
+        return planes;
+    }
+
     public Airport sortByMaxDistance() {
         planes.sort(Comparator.comparingInt(Plane::getMaxFlightDistance));
         return this;
