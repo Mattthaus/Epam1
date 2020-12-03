@@ -1,6 +1,0 @@
-*.db
-*.log 
-/target
-/bin
-Change
-.DS_Store
