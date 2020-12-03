@@ -1,6 +1,9 @@
 *.db
 *.log 
-/target
-/bin
-Change
-.DS
+*.iml
+*/.idea/*
+*/.DS_Store/*
+*/target/*
+*.log
+*/out/*
+
