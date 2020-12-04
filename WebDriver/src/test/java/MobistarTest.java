@@ -9,17 +9,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import page.LandingPage;
-import page.SearchResultPage;
 
 import java.time.Duration;
 
 
-public class MobistarTests {
+public class MobistarTest {
 
     WebDriver driver;
-    LandingPage landingPage;
-    SearchResultPage searchResultPage;
 
     @BeforeClass
     public void setUp(){
@@ -29,24 +25,8 @@ public class MobistarTests {
         chromeOptions.addArguments("disable-gpu");
         chromeOptions.addArguments("window-size=1920,1080");
         driver = new ChromeDriver(chromeOptions);
-        landingPage = new LandingPage(driver);
-        searchResultPage = new SearchResultPage(driver);
     }
-
-    @Test
-    public void searchTest(){
-
-        driver.get("http://mobistar.by");
-
-        landingPage.enterSearchData("IPhone 7");
-        landingPage.startSearch();
-
-        String name = searchResultPage.getDeviceName();
-        boolean contains = name.toLowerCase().contains("IPhone 7".toLowerCase());
-
-        Assert.assertTrue(contains);
-    }
-
+    
     @Test
     public void cartTest(){
 
