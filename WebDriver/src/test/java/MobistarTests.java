@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -25,7 +26,10 @@ public class MobistarTests {
 
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("disable-gpu");
+        driver = new ChromeDriver(chromeOptions);
         landingPage = new LandingPage(driver);
         searchResultPage = new SearchResultPage(driver);
     }
