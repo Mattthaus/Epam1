@@ -55,7 +55,7 @@ public class MobistarTests {
         WebElement toCartBtn = driver.findElement(By.xpath("//button[@data-offer-id=\"9949\"]"));
         toCartBtn.click();
 
-        new WebDriverWait(driver, Duration.ofSeconds(10).toSeconds())
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href=\"/basket\"]")));
 
         WebElement toCheckout = driver.findElement(By.xpath("//a[@href=\"/basket\"]"));
