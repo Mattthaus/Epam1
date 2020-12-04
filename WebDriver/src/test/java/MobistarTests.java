@@ -24,11 +24,10 @@ public class MobistarTests {
     @BeforeClass
     public void setUp(){
 
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("disable-gpu");
+        chromeOptions.addArguments("window-size=1920,1080");
         driver = new ChromeDriver(chromeOptions);
         landingPage = new LandingPage(driver);
         searchResultPage = new SearchResultPage(driver);
