@@ -12,6 +12,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
+
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -26,6 +28,13 @@
             <artifactId>testng</artifactId>
             <version>7.3.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.2.2</version>
         </dependency>
 
     </dependencies>
