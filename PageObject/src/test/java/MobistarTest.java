@@ -9,7 +9,7 @@ import page.LandingPage;
 import page.ProductPage;
 
 
-public class MobistarTests {
+public class MobistarTest {
 
     WebDriver driver;
 
