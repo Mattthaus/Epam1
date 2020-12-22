@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import provider.LoggerProvider;
 
 import java.util.List;
 
 public class SearchResultPage extends CommonPage {
+
     private final static String ITEM_PRICE_TEMPLATE
             = "//ul[@class='product_list  grid row']//li[(item)]//span[contains(@class, 'new_price')]";
 
@@ -29,18 +31,21 @@ public class SearchResultPage extends CommonPage {
     }
 
     public String getDeviceName(){
+        LoggerProvider.getLog().info("Getting device name");
         return devicesList.get(0)
                 .findElement(By.xpath(PRODUCT_LINK))
                 .getAttribute("title");
     }
 
     public SearchResultPage sortByPrice(){
+        LoggerProvider.getLog().info("Sorting by price");
         sortSelector.click();
         sortByPriceOption.click();
         return this;
     }
 
     public double getItemPrice(int item){
+        LoggerProvider.getLog().info("Getting item price");
         String itemPath = ITEM_PRICE_TEMPLATE.replace("(item)", String.valueOf(item));
         String itemPriceStr = driver.findElement(By.xpath(itemPath)).getText();
         itemPriceStr = itemPriceStr.split(",")[0];

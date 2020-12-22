@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TestScreenshotListener implements ITestListener {
+
     @Override
     public void onTestFailure(ITestResult result) {
         LoggerProvider.getLog().info("Making screenshot on test failure");

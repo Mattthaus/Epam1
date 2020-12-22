@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public abstract class CommonPage {
+
     public static final String SITE_URL = "http://mobistar.by";
 
     public static final String CART_URL = "http://mobistar.by/basket";

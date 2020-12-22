@@ -5,8 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import provider.LoggerProvider;
 
 public class CartPage extends CommonPage {
+
     public static final String PRODUCT_INCREASE_TEMPLATE
             = "//a[@href='(product)']/../..//span[@class='input-group-addon cart-count-plus']";
 
@@ -25,10 +27,12 @@ public class CartPage extends CommonPage {
     }
 
     public String getProductPrice() {
+        LoggerProvider.getLog().info("Getting product price");
         return price.getText();
     }
 
     public CartPage increaseProductNumber(String product) {
+        LoggerProvider.getLog().info("Increasing product number");
         product = product.replace(SITE_URL, "");
         String buttonPath = PRODUCT_INCREASE_TEMPLATE.replace("(product)", product);
         WebElement increaseButton = driver.findElement(By.xpath(buttonPath));
@@ -37,12 +41,14 @@ public class CartPage extends CommonPage {
     }
 
     public double getFinalPrice() {
+        LoggerProvider.getLog().info("Getting final price");
         String priceStr = finalPriceElement.getText();
         priceStr = priceStr.replace(" ", "").split(",")[0];
         return Double.parseDouble(priceStr);
     }
 
     public String getCounterValue() {
+        LoggerProvider.getLog().info("Getting counter value");
         return counterValueElement.getText();
     }
 }
