@@ -1,6 +1,6 @@
 Information for CI:
 
-Jenkins: http://35.222.245.115:8090
+Jenkins: http://35.224.161.45:8090
 
 Admin:
 
